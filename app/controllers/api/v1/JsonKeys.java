@@ -32,6 +32,34 @@ public class JsonKeys {
   public static final String COUNT = "count";
   public static final String VALUE = "value";
   public static final String QUEUE = "queue";
+  public static final String SEARCH_OPTS = "search-options";
+  public static final String START = "start";
+  public static final String END = "end";
+  public static final String SEARCH_RESULTS = "search-results";
+  public static final String JOB_TYPES = "jobtypes";
+  public static final String HEURISTICS = "heuristics";
+  public static final String SEVERITIES = "severities";
+  public static final String JOB_CATEGORY = "jobcategory";
+  public static final String TOTAL = "total";
+  public static final String SUMMARIES = "summaries";
+  public static final String SCHEDULER = "scheduler";
+  public static final String CRITICAL = "critical";
+  public static final String SEVERE = "severe";
+  public static final String MODERATE = "moderate";
+  public static final String LOW = "low";
+  public static final String NONE = "none";
+  public static final String DASHBOARD_SUMMARIES = "dashboard-summaries";
+  public static final String USER_RESULTS = "user-results";
+  public static final String USER_DETAILS = "user-details";
+  public static final String EXCEPTION_STATUSES = "exception-statuses";
+  public static final String EXCEPTION_STATUS = "exception-status";
+  public static final String SCHEDULERS = "schedulers";
+  public static final String EXCEPTION_ENABLED = "exceptionenabled";
+  public static String EXCEPTION_SUMMARY = "exceptionSummary";
+  public static String STATUS = "status";
+  public static String TYPE = "type";
+  public static String TASKS = "tasks";
+  public static String WORKFLOW_EXCEPTIONS = "workflow-exceptions";
 
 
   // Workflows
@@ -39,6 +67,7 @@ public class JsonKeys {
   public static final String WORKFLOWS = "workflows";
   public static final String FLOW_DEF_ID = "flowdefid";
   public static final String FLOW_EXEC_ID = "flowexecid";
+  public static final String TOTAL_WORKFLOWS = "totalworkflows";
 
   // Jobs
   public static final String JOB_SUMMARIES = "job-summaries";
@@ -49,6 +78,8 @@ public class JsonKeys {
   public static final String JOB_NAME = "jobname";
   public static final String JOBS = "jobs";
   public static final String JOBSSUMMARIES = "jobssummaries";
+  public static final String TOTAL_JOBS = "totaljobs";
+
 
   // Tasks
   public static final String APPLICATION_SUMMARIES = "application-summaries";
@@ -60,4 +91,5 @@ public class JsonKeys {
   public static final String DETAILS = "details";
   public static final String YARN_APP_HEURISTIC_RESULTS = "yarnappheuristicresults";
   public static final String APPLICATIONS = "applications";
+  public static final String TOTAL_APPLICATIONS = "totalapplications";
 }

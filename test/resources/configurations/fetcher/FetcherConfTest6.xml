@@ -21,7 +21,6 @@
     <classname>org.apache.spark.deploy.history.SparkFSFetcher</classname>
     <params>
       <event_log_size_limit_in_mb></event_log_size_limit_in_mb>
-      <event_log_dir></event_log_dir>
     </params>
   </fetcher>
 </fetchers>

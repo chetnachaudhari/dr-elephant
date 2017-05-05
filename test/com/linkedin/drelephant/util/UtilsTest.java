@@ -45,6 +45,24 @@ public class UtilsTest {
   }
 
   @Test
+  public void testParseJavaOptionsIgnoresNonStandardOptions() {
+    Map<String, String> options1 = Utils.parseJavaOptions("-Dfoo=bar -XX:+UseCompressedOops -XX:MaxPermSize=512m -Dfoo2=bar2");
+    assertEquals(2, options1.size());
+    assertEquals("bar", options1.get("foo"));
+    assertEquals("bar2", options1.get("foo2"));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testParseJavaOptionsThrowsIllegalArgumentExceptionForMissingAssignment() {
+    Utils.parseJavaOptions("-Dfoo");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testParseJavaOptionsThrowsIllegalArgumentExceptionForUnexpectedProperties() {
+    Utils.parseJavaOptions("-foo");
+  }
+
+  @Test
   public void testGetParam() {
     Map<String, String> paramMap = new HashMap<String, String>();
     paramMap.put("test_severity_1", "10, 50, 100, 200");
@@ -197,11 +215,11 @@ public class UtilsTest {
 
     long []durations = {10000, 213234343, 23424, 635322, 213};
 
-    assertEquals("0.003 GB Hours", Utils.getDurationInGBHours(durations[0]));
-    assertEquals("57.844 GB Hours", Utils.getDurationInGBHours(durations[1]));
-    assertEquals("0.006 GB Hours", Utils.getDurationInGBHours(durations[2]));
-    assertEquals("0.172 GB Hours", Utils.getDurationInGBHours(durations[3]));
-    assertEquals("0 GB Hours", Utils.getDurationInGBHours(durations[4]));
+    assertEquals("0.003 GB Hours", Utils.getResourceInGBHours(durations[0]));
+    assertEquals("57.844 GB Hours", Utils.getResourceInGBHours(durations[1]));
+    assertEquals("0.006 GB Hours", Utils.getResourceInGBHours(durations[2]));
+    assertEquals("0.172 GB Hours", Utils.getResourceInGBHours(durations[3]));
+    assertEquals("0 GB Hours", Utils.getResourceInGBHours(durations[4]));
 
   }
 
